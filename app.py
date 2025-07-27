@@ -7,6 +7,10 @@ app = Flask(__name__)
 def hello():
     return "Hola desde Railway"
 
+@app.route("/ping")
+def ping():
+    return "pong"
+
 if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 5000))  # ⬅️ Railway define esta variable
-    app.run(host="0.0.0.0", port=port)         # ⬅️ host debe ser 0.0.0.0
+    port = int(os.environ.get("PORT", 5000))  # Railway define esta variable
+    app.run(host="0.0.0.0", port=port)        # host debe ser 0.0.0.0
